@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./stylesheets/style.css">
+<head>
+</head>
+<body>
+
+<div class="container-fluid bg-3 text-center">   
+    <h3>Image To Text Convert</h3>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="jumbotron">
+      <div class="row">
+      <div class="col-md-6">
+      <div class="form-group">
+        <label>Upload Image</label>
+        <form action = "http://localhost:5000/upload" class="container" method = "POST" 
+         enctype = "multipart/form-data">
+              <div class = "btn btn-primary btn-md float-left">
+              <input type = "file" name = "file" />
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <br>
+         <hr/>
+{% if filename %}
+  <img src="{{ filename }}" alt="Image" width="300" height="350">
+{% else %}
+  <h1></h1>
+{% endif %}
+  </form>
+    </div>
+    </div>
+    <div class="col-md-6" style="background-color:pink;">
+     <h4>Result</h4>
+     <h5>{{ name }}</h5>
+    </div>
+  </div>
+      </div>
+    </div>   
+  </div>
+</div>
+</body>
+</html>
