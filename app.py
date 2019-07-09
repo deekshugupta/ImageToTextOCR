@@ -4,6 +4,7 @@ import os
 import cv2
 import numpy as np
 import pytesseract
+pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
 from PIL import Image
 from pytesseract import image_to_string
 
